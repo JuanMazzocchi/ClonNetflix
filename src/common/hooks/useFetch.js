@@ -12,7 +12,6 @@ const useFetch = (service) => {
        setIsLoading(true);
        
        try {
-        // const data = await axios("https://api.themoviedb.org/3/tv/top_rated?api_key=aa9ae5253f432f685640faa4716ee7f9 ")
         const data = await service();
         
         console.log(data, "data desde fetchData")

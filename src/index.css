@@ -1,22 +1,46 @@
- *{
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 
  }
- html{
+html{
  font-size: 62.5%;
  }
 
- body{
+body{
   font-family:'roboto', sans-serif;
   font-size: 1.6rem;
  }
 
- :root{
+:root{
 
   --color-red: #db0000;
   --color-black: #000;
   --color-background:#161616;
   --color-white:#fff;
  }
+
+.pruebacss{
+    justify-self:center;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+ }
+/* .mySwipe{
+   overflow: visible !important;
+   z-index: 10;
+ }
+.swiper-slide>img{
+   overflow:visible;
+}
+.poster{
+   overflow: visible !important;
+   z-index: 100 !important;
+}
+img{
+   overflow: visible !important;
+} */
+/* .swiper{
+   overflow: visible !important;
+} */

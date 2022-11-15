@@ -1,9 +1,12 @@
-import axios from "axios";
+ 
+import movieAdapter from "../../../common/adapters/movieadapter";
 import { TMDB } from "../../../config/tmdb";
+
 
 const getPopularMovies = async ( )=>{
       
     const res =  await TMDB.api(TMDB.path.movies.popular);
-    return(res.data.results);
+    console.log(res.data.results)
+    return movieAdapter(res.data.results)
 }
 export default getPopularMovies;
