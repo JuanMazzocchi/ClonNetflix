@@ -1,5 +1,4 @@
 import axios from "axios";
-import useFetch from "../common/hooks/useFetch";
 import { ENV } from "../environment/environment";
 
  
@@ -11,7 +10,9 @@ export const TMDB ={
             baseURL:"https://api.themoviedb.org/3",
             params:{
                 api_key:ENV.API_KEY,
-            }}),
+            },
+                
+        }),
    
     path:{
         movies:{
@@ -21,6 +22,23 @@ export const TMDB ={
         series:{
             popular:"/tv/popular",
             top_rated:"/tv/top_rated",
+        }, 
+        trending:{
+        
+            path:{
+                movie:{
+                    day:"/trending/movie/day",
+                    week:"/trending/movie/week"
+                },
+                tv:{
+                    day:"/trending/tv/day",
+                    week:"/trending/tv/week"
+                },
+                all:{
+                    day:"/trending/all/day",
+                    week:"/trending/all/week"
+                },
+            },
         }
     },
     images:{
@@ -48,6 +66,15 @@ export const TMDB ={
             },
    
         }
+    },
+    trailer:{
+        path:"/movie//videos"
+        
+    },
+    youtube:{
+        path:"https://www.youtube.com/watch?v=",
     }
+         
+   
 }
  

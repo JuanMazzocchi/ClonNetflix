@@ -4,8 +4,9 @@ import React ,{ createContext, useState } from "react";
 export const AuthContext = createContext();
 
 const AuthProvider =({children})=>{
-    const [isAuth, setIsAuth] = useState(false)
-    const [user, setUser] = useState(null)
+    const [isAuth, setIsAuth] = useState(false);
+    const [user, setUser] = useState(null);
+    const [avatar,setAvatar]=useState(null);
 
   return (
     <AuthContext.Provider 
@@ -13,7 +14,9 @@ const AuthProvider =({children})=>{
         isAuth,
         setIsAuth,
         user,
-        setUser}}> 
+        setUser,
+        setAvatar,
+        avatar}}> 
 
     {children}
 

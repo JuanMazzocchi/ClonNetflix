@@ -7,7 +7,7 @@ import { AuthContext } from '../features/auth/AuthContext';
 // HOC
 
 const ProtectedRoutes= ({children}) => {
-    console.log("protectedRoutes");
+    // console.log("protectedRoutes");
     
   const {isAuth}=useContext(AuthContext);
   // let check= localStorage.getItem('autorizado');
@@ -19,7 +19,7 @@ const ProtectedRoutes= ({children}) => {
     console.log("autorizado")
     return children
   };
-  console.log("redireccionado a login")
+  // console.log("redireccionado a login")
   return <Navigate to='/login'/>;
 };
 

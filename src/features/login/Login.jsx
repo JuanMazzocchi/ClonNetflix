@@ -2,9 +2,9 @@ import React, { useContext, useState  } from 'react';
  
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../auth/AuthContext';
-import { LoginCentrador, LoginContainer, LoginInputContainer, LoginUnderInput } from './styledComponents/styled';
+import { LinkAyuda, LinkSuscribe, LoginButton, LoginCentrador, LoginCheckbox, LoginContainer, LoginFooterContainer, LoginFooterInner, LoginFooterLanguageContainer, LoginFooterLinks, LoginInputContainer, LoginRememberMe, LoginSuscribContainer, LoginUnderInput } from './styledComponents/styled';
 import logo from "../../assets/kisspng-netflix-streaming-media-television-show-logo-netflix-5b35ddf096b661.9355823215302568806173.png"
-
+import globe from "../../assets/globe.png";
 const Login = () => {
  const {user,setUser,setIsAuth}=useContext(AuthContext);
     const [formularioLogin, setFormularioLogin] = useState({
@@ -13,7 +13,10 @@ const Login = () => {
       });
     
       const handleChange = (e) => {
+         
         const { name, value } = e.target;
+        // let coord = e.target.getBoundingClientRect();
+        // console.log(coord)
          
     
         setFormularioLogin({
@@ -21,27 +24,30 @@ const Login = () => {
           [name]: value,
         });
       };
+
     const navigate = useNavigate();
 
     const submit=()=>{
-      setUser({
+      if (formularioLogin.nombre ==="" | formularioLogin.pass===""){
+        alert("Usuario o contraseña incorrectas")
+      }else{
+         setUser({
         nombre:formularioLogin.nombre,
         pass:formularioLogin.pass
       });
       setIsAuth(true);
-      navigate('/principal',{ replace:true});
+      navigate('/selectUser',{ replace:true});
+      }
 
-      // localStorage.setItem('autorizado', 'true');
 
-      // navigate('/checkout',{ replace:true});
+     
+
+      localStorage.setItem('autorizado', 'true');
+
+       
 
       
     };
-    
-
-
-
-
   return (<>
   <LoginContainer>
    <div> <img src={logo} width="15%"/></div>
@@ -50,7 +56,7 @@ const Login = () => {
     <div><p style={{fontSize:"3rem",marginBottom:"1rem"}}>Inicia Sesion</p></div>
     <div >
      
-   <div style={{width:"100%",marginBottom:"1rem"}}> <input
+   <div style={{width:"100%",marginBottom:"1.5rem"}}> <input
       style={{height:"4rem", backgroundColor:"rgba(51,51,51)",borderRadius:"5px",border:"none",width:"100%",padding:"1rem",color:"white"}} 
       size="40"  
       type="text"
@@ -60,7 +66,7 @@ const Login = () => {
       onChange={handleChange}
     />
     </div>
-     <div >
+     <div style={{marginBottom:"3rem"}}>
     <input
         style={{height:"4rem", backgroundColor:"rgba(51,51,51)",borderRadius:"5px",border:"none",width:"100%",padding:"1rem",color:"white"}}
       size="40"         
@@ -72,15 +78,39 @@ const Login = () => {
     />
     </div>
      </div>
-     <div style={{display:"flex", justifyContent:"center", marginTop:"2rem"}}><button style={{backgroundColor:"rgba(229, 9, 20)",border:"none",padding:"1rem",borderRadius:"5px",fontSize:"2rem",width:"100%",color:"white" }} onClick={()=>{submit()}}>Inicia sesion</button></div>
+     <div style={{display:"flex", justifyContent:"center", marginTop:"2rem"}}><LoginButton onClick={()=>{submit()}}>Iniciar sesion</LoginButton></div>
     <LoginUnderInput>
-       <p><input type="checkbox"/>Recuerdame</p> <p>¿Necesitas ayuda?</p>
+        <LoginRememberMe><LoginCheckbox  type="checkbox" />Recuerdame </LoginRememberMe> <p><LinkAyuda>¿Necesitas ayuda?</LinkAyuda> </p>
     </LoginUnderInput>
+    <LoginSuscribContainer><p style={{color:"gray"}}>¿Primera vez en Netflix? </p> <LinkSuscribe>Suscribete ahora.</LinkSuscribe>   </LoginSuscribContainer>
+    <div><p style={{fontSize:"1.3rem",color:"gray"}}>Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.<a href='#'> Más info.</a></p></div>
      </LoginInputContainer>
-     </LoginCentrador>
+    
+    </LoginCentrador>
+      <LoginFooterContainer>
+        <LoginFooterInner><p>¿Preguntas? Llama al 0800 345 1593</p>
+          <LoginFooterLinks>
+            <LinkAyuda>Preguntas frecuentes</LinkAyuda>
+            <LinkAyuda>Centro de ayuda</LinkAyuda>
+            <LinkAyuda>Términos de uso</LinkAyuda>
+            <LinkAyuda>Privacidad</LinkAyuda>
+            <LinkAyuda>Preferencias de cookies</LinkAyuda>
+            <LinkAyuda>Información corporativa</LinkAyuda>
+          </LoginFooterLinks>
+          <LoginFooterLanguageContainer>
+            <label  style={{paddingTop:"1.5rem",paddingLeft:"0.5rem"}}><img src={globe} width="50%"/></label>
+                <select name="membership" id="membership" style={{backgroundColor:"black",color:"gray",border:"none"}}>
+                  <option value="EN">Ingles</option>
+                  <option value="ESP" defaultValue>Español</option>
+                   
+                </select>
+          </LoginFooterLanguageContainer>
+        </LoginFooterInner>
+      </LoginFooterContainer> 
  </LoginContainer>
-    </>
+    </> 
   )
 }
+
 
 export default Login

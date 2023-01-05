@@ -11,6 +11,9 @@ html{
 body{
   font-family:'roboto', sans-serif;
   font-size: 1.6rem;
+  width: 100%;
+  overflow-x: hidden;
+  
  }
 
 :root{
@@ -21,26 +24,41 @@ body{
   --color-white:#fff;
  }
 
-.pruebacss{
-    justify-self:center;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+
+ .modal{
+   z-index: 1000;
+   position: absolute;
  }
-/* .mySwipe{
+ .ReactModal__body--open{
+   z-index: 1000;
+   position: absolute;
+ }
+ .ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+ .mySwiper{
    overflow: visible !important;
    z-index: 10;
  }
-.swiper-slide>img{
-   overflow:visible;
+ .pruebacss{
+  justify-self:center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: underline;
+  cursor:default;
+  width: auto;
+  background-size: contain;
+  text-align: center;
+  
 }
-.poster{
-   overflow: visible !important;
-   z-index: 100 !important;
-}
-img{
-   overflow: visible !important;
-} */
-/* .swiper{
-   overflow: visible !important;
-} */
+ 
+ 

@@ -1,17 +1,28 @@
 import styled from "styled-components";
 
 export const CardContainer=styled.div`
+display:${(props)=>props.display};
 transition: all 0.3s  ease-in-out;
-z-index:2;
+z-index:10;
+width:160px;
+height:216px;
+overflow:visible;
+
+ 
+
 & img{
     border-radius:5px;
-    overflow: visible !important;
-
-    
+  
 }
 
 &:hover {
-    transform: scale(1.1);
+   
+    transform: scale(1.2);
     cursor:pointer;
+     
+
+    
 }
+ 
+
 `

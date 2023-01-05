@@ -1,8 +1,9 @@
-import axios from 'axios';
+ 
 import  { useEffect, useState } from 'react'
  
 
 const useFetch = (service) => {
+   
     const [data,setData]=useState([]);
     const [isLoading,setIsLoading]=useState(true);
     const [error,setError]=useState();
@@ -14,7 +15,7 @@ const useFetch = (service) => {
        try {
         const data = await service();
         
-        console.log(data, "data desde fetchData")
+        // console.log(data, "data desde fetchData")
         setData(data)
        } catch (error) {
         console.log(error)

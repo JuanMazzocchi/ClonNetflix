@@ -17,7 +17,7 @@ z-index:-1;
 &:before {
     z-index: -1;
     content:"";
-    posistion:absolute;
+    // posistion:absolute;
     top:0;
     letf:0;
     width:100%;
@@ -41,10 +41,11 @@ BannerContainer.defaultProps={
 export const ButtonBannerPlay= styled.button`
 color: black;
   font-size: 2rem;
-  margin: 1rem;
+  margin-left: 20px;
   padding: 0.5rem 1rem;
   width:140px;
   border:0;
+  border-radius:5px;
   
 
   &:hover{
@@ -73,7 +74,8 @@ color: black;
  export const ContainerTitle = styled.div`
  
  width:30%;
- margin:15rem 0 10rem 10rem;
+ margin:15rem 0 0rem 10rem;
+align-items:flex-end;
 //  background-color:rgba(168,168,168, 0.8);
 //  border-radius:5px
  
