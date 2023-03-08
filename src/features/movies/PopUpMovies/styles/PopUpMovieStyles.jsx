@@ -30,3 +30,34 @@ justify-content:space-between;
 // margin-left:20px
 
 `
+export const PopUpButtonAddToMyList=styled.button`
+background-color:rgba(20,20,20);
+color:white;
+border:3px  solid  gray;
+width:35px;
+border-radius: 40px;
+height:35px;
+margin-left:10px;
+font-size:  20px;
+
+&:hover{
+    cursor:pointer;
+
+}
+
+`
+export const PopUpButtonRemoveFromList=styled.button`
+background-color:rgba(20,20,20);
+color:white;
+border:3px  solid  gray;
+width:35px;
+border-radius: 40px;
+height:35px;
+margin-left:10px;
+font-size:  20px;
+
+&:hover{
+    cursor:pointer;
+
+}
+`

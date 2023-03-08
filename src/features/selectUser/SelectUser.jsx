@@ -10,34 +10,27 @@ import { AuthContext } from '../auth/AuthContext';
 
 const SelectUser = () => {
     const navigate = useNavigate();
-    const {setAvatar}=useContext(AuthContext);
+    const {selectedAvatar}=useContext(AuthContext);
 
     const onClick= (e)=>{
       const {name}=e.target;
-      // console.log("****************",name)
-      setAvatar(name);
+       
+      selectedAvatar(name);
       navigate('/principal', {replace:true})
+    };
 
 
-
-
-
-    }
 
   return (
      <SelectUserContainer>
         <div><h1 style={{fontSize:"5rem"}}>¿Quién está viendo ahora?</h1></div>
         <SelectUserUsersIconsContainer>
-          <div><img src={nuri} name="Nuri" width="160px" height="160px" onClick={onClick}/>
-          <p>Nuria</p></div>
-          <div><img src={martin} name="Martin" width="160px" height="160px" onClick={onClick}/>
-          <p>Martin</p></div>
           <div><img src={juano} name="Juano" width="160px" height="160px" onClick={onClick}/>
-          <p>Juano</p></div>
+          <p>Principal</p></div>
           <div><img src={santi} name="Santi" width="160px" height="160px" onClick={onClick}/>
-          <p>Santiago</p></div>
+          <p>Invitado</p></div>
           <div><img src={vicky} name="Vicky" width="160px" height="160px" onClick={onClick}/>
-          <p>Vicky</p></div>
+          <p>Niños</p></div>
 
           
             

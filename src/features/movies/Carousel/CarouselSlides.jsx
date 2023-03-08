@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React  from 'react'
 import { CardContainer } from '../../../common/styledComponents/CardContainer';
 import Modal from 'react-modal';
 import useModal from '../../../common/hooks/useModal';
@@ -7,7 +6,7 @@ import PopUpMovies from '../PopUpMovies/PopUpMovies';
 
 
 const CarouselSlides=({item})=>{
-      const [display,setDisplay]=useState("block");
+      
       const {closeModal,openModal,showModal}=useModal()       
       const customStyles = {
             overlay: {
@@ -25,7 +24,7 @@ const CarouselSlides=({item})=>{
                 width:"45%",
                 height:"700px",
                 borderRadius:"10px",
-                border:"trasnparent",
+                 
                  
                 // position:"absolute" ,
                 // zIndex:"1",
@@ -40,14 +39,7 @@ const CarouselSlides=({item})=>{
                
               },
             };
-      const navigate=useNavigate();
-      const GoToTrailer= (item)=>{
-            if (item.SERIES!="Serie"){ navigate(`/movie/${item.id}`)}
-            else
-            {
-                  navigate(`/serie/${item.id}`)
-            };
-            };
+      
       
   
 
@@ -58,7 +50,7 @@ const CarouselSlides=({item})=>{
       
       return  (<>
                   
-            <CardContainer display={display}>
+            <CardContainer>
                   <Modal 
                         shouldCloseOnOverlayClick={
                               true}

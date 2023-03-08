@@ -15,6 +15,16 @@ export const sliderProps ={
     
 }
 
+export const sliderMyListProps={
+    slidesPerView:8,
+    spaceBetween:1,
+    slidesPerGroup:4,
+    loop:false,
+    loopFillGroupWithBlank:true,
+    navigation:true,
+    modules:[Pagination,Navigation],
+}
+
 export const sliderNumerosProps={
     slidesPerView:6,
         spaceBetween:1,

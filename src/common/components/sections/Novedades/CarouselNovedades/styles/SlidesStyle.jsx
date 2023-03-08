@@ -7,6 +7,7 @@ flex-direction:row;
 max-width:240px;
 height:171px;
 background-color:rgba(20,20,20);
+cursor:pointer;
 
 
 

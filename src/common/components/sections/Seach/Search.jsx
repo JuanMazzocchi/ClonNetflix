@@ -16,8 +16,8 @@ const Search = ( ) => {
   <div style={{backgroundColor:"rgba(20,20,20)",color:"white", paddingTop:"5rem", minHeight:"800px"}}>
     <h1 style={{marginLeft:"30px", paddingTop:"20px"}}>Resultados de la busqueda : <b>{keyword}</b></h1>
     <div style={{display:"flex", flexWrap:"wrap", backgroundColor:"rgba(20,20,20)",justifyContent:"space-around"}}>
-        <SearchCards busqueda={busqueda} tipo={"Peliculas"}/>
-        <SearchCards busqueda={busquedaTv} tipo={"Series"}/>
+        <SearchCards busqueda={busqueda} tipo={"Peliculas"} key="Peliculas"/>
+        <SearchCards busqueda={busquedaTv} tipo={"Series"} key="Series"/>
     </div> 
   </div>
   </>)

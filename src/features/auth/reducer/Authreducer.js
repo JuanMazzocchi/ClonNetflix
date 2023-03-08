@@ -4,6 +4,7 @@ export  const authInitialState = {
         name:null,
     },
     isAuth:false,
+    avatar:null,
 };
 
 export const AUTH_TYPES = {
@@ -11,8 +12,18 @@ export const AUTH_TYPES = {
     LOGOUT:"LOGOUT",
 }
 
+export const AVATAR_TYPES = {
+    OPCION:"OPCION",
+
+}
+
 export const initialazeAuthState =()=>{
-return JSON.parse(localStorage.getItem("auth")) || authInitialState; //Si no esxiste "auth" retorna el authInitialState
+    let local = JSON.parse(localStorage.getItem("auth"));
+    if (local!=null){
+        console.log( "autorizado= " +local.isAuth +" Nombre= "+ local.name+"    desde reducer")
+         }
+    
+return JSON.parse(localStorage.getItem("auth")) || authInitialState; //Si no existe "auth" retorna el authInitialState
 }
 
 /*
@@ -37,9 +48,18 @@ export const authReducer = (state,action)=>{
         case AUTH_TYPES.LOGOUT:
                 return {
                     ...state,
-                    name:null,
+                    user:{
+                        name:null,
+                    },                    
                     isAuth:false,
                 };
+
+        case AVATAR_TYPES.OPCION:
+            return {
+                ...state,
+                avatar:action.payload.name
+
+            }
         default:
             return state;
     }

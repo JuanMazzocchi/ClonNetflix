@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../common/components/banner/BannerMovies'
 import Nav from '../common/components/Nav/Nav'
+import MyListCarrousel from '../common/components/sections/MyList/MyListCarrousel'
 import CarouselMultiuso from '../features/movies/Carousel/CarouselMultiuso'
 import servicios from '../utils/servicios'
 const Layout = () => {
@@ -18,6 +19,7 @@ const Layout = () => {
                          
     <CarouselMultiuso service={servicios.getTopTv}
                         titulo={"Series Mejor Rankeadas"}/>
+    <MyListCarrousel/>
     </>
   )
 }

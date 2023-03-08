@@ -15,7 +15,7 @@ import customStyles from './styles/customStyles';
 
 const Banner = () => {
 const navigate = useNavigate();
-const {data,isLoading}=useFetch(getPopularMovies);
+const {data}=useFetch(getPopularMovies);
 const aleatorio =  random();
 const {closeModal,openModal,showModal}=useModal();
  
@@ -24,8 +24,7 @@ const GoToTrailer= (id)=>{
 };
 return (
         <>
-         {isLoading=== true ? (<><div style={{widht:"2000px", zIndex:"1000",backgroundColor:"black",position:"absolute",height:"1200px"}}><img src={loading} alt="loading"  /></div> </>) :
-         (<> 
+          
 
          <BannerContainer        
         image={data[aleatorio]?.backdrop} >
@@ -61,7 +60,7 @@ return (
                               <PopUpMovies item={data[aleatorio]} />
                         </div>
                   </Modal>
-         </BannerContainer>   </>)   }
+         </BannerContainer>    
      </>
   )
 }

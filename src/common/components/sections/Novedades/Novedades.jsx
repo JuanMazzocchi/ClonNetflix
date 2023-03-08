@@ -19,7 +19,7 @@ const Novedades = () => {
     <CarouselMultiuso service={servicios.getNovedadesMovies}
                         titulo={"Novedades Peliculas"}/>
    
-     <CarouselNumeros />    {/*  por ahora queda asi, a prueba el modal, cuando funcione hay q implementarlo en el multiuso  */}
+     <CarouselNumeros />    {/* no funciona bien el modal  */}
      </div>
      
      

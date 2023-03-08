@@ -1,12 +1,21 @@
 import React, { useContext, useState  } from 'react';
  
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from '../auth/AuthContext';
+ 
 import { LinkAyuda, LinkSuscribe, LoginButton, LoginCentrador, LoginCheckbox, LoginContainer, LoginFooterContainer, LoginFooterInner, LoginFooterLanguageContainer, LoginFooterLinks, LoginInputContainer, LoginRememberMe, LoginSuscribContainer, LoginUnderInput } from './styledComponents/styled';
 import logo from "../../assets/kisspng-netflix-streaming-media-television-show-logo-netflix-5b35ddf096b661.9355823215302568806173.png"
 import globe from "../../assets/globe.png";
+ 
+import { AuthContext } from '../auth/AuthContext';
 const Login = () => {
- const {user,setUser,setIsAuth}=useContext(AuthContext);
+const navigate = useNavigate();
+
+
+
+
+ const {login,logout}=useContext(AuthContext);
+  
+  
     const [formularioLogin, setFormularioLogin] = useState({
         nombre: "",
         pass: "",
@@ -15,34 +24,32 @@ const Login = () => {
       const handleChange = (e) => {
          
         const { name, value } = e.target;
-        // let coord = e.target.getBoundingClientRect();
-        // console.log(coord)
-         
-    
-        setFormularioLogin({
+          setFormularioLogin({
           ...formularioLogin,
           [name]: value,
         });
       };
 
-    const navigate = useNavigate();
+ 
 
     const submit=()=>{
       if (formularioLogin.nombre ==="" | formularioLogin.pass===""){
         alert("Usuario o contraseña incorrectas")
       }else{
-         setUser({
-        nombre:formularioLogin.nombre,
-        pass:formularioLogin.pass
-      });
-      setIsAuth(true);
+        //  setUser({
+        // nombre:formularioLogin.nombre,
+        // pass:formularioLogin.pass
+      // });
+
+      // setIsAuth(true);
+      login(formularioLogin.nombre);
       navigate('/selectUser',{ replace:true});
       }
 
 
      
 
-      localStorage.setItem('autorizado', 'true');
+      // localStorage.setItem('autorizado', 'true');
 
        
 
