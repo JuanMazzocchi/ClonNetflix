@@ -10,31 +10,15 @@ const ProtectedRoutes= ({children}) => {
     
   const {auth, firstLog,setFirstLog,login}=useContext(AuthContext);
   console.log("firstLog =   "+ firstLog)
-  // if(firstLog==false){
-  //    if(auth.isAuth ===true){
-  //   console.log("autorizado desde protected")
-  //   console.log(auth.isAuth)
-  //   return children
-  // } else if(firstLog===true){
-  //   console.log("primer ingreso, direccionando a selectUser")
-  //   setFirstLog(false);
-  //   
-  // }
   
-
- 
-  // };
-  
-  // return <Navigate to='/login'/>;
-
-  if(auth.isAuth===true && firstLog===true){
+  if(auth.isAuth===true && firstLog===true){ //si esta autorizado y es la 1era vez que entra entonces va directo a select
     setFirstLog(false)
      return <Navigate to='/selectUser'/>
 
-  }else if(auth.isAuth===true && firstLog===false){
+  }else if(auth.isAuth===true && firstLog===false){ //si no es la 1era vez sigue al children
     return children
   }
-  return <Navigate to='/login'/>;
+  return <Navigate to='/login'/>; //si no esta auto va a login
 
 
 

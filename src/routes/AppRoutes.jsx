@@ -30,11 +30,7 @@ const AppRoutes = () => {
                     <Route path='/movie/:id' element={<MovieView />}/>
                     <Route path='/serie/:id' element={<SerieView />}/>
                     <Route path='/myList' element={<MyListView />}/>
-                    <Route path='/search/:keyword' element={
-                      <SearchView>
-                        <Search />
-                      </SearchView>
-                    }/>
+                    <Route path='/search/:keyword' element={<SearchView />}/>
 
                 </Routes>
             </ProtectedRoutes>} />

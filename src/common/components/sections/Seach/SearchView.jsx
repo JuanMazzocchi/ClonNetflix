@@ -2,10 +2,10 @@
 import Nav from '../../Nav/Nav'
 import Search from './Search'
 
-const SearchView = ({children}) => {
+const SearchView = () => {
   return (<>
     <Nav />
-    {children}
+    <Search />
   </>)
 }
 
